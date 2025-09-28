@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-const menuItems = ["خانه", "دسته بندی ها", "تخفیف ها", "راهنما", "تماس"];
+const menuItems = ["خانه", "دسته بندی ", "تخفیف ها", "راهنما", "تماس"];
 
 export default function Navbar() {
   const defaultIndex = 0; // highlight starts at خانه
@@ -10,14 +10,14 @@ export default function Navbar() {
 
   return (
     <div
-      className="relative w-[35vw] h-[50px] rounded-full border border-white/10 shadow-xl shadow-black/20 backdrop-blur-lg backdrop-brightness-200 bg-gradient-to-br from-white/5 from-10% to-transparent to-60% flex font-extralight overflow-hidden"
+      className="relative w-[35vw] h-[50px] rounded-full border border-white/20 shadow-xl shadow-black/20 backdrop-blur-lg backdrop-brightness-200 bg-gradient-to-br hidden from-white/5 from-10% to-transparent to-60% lg:flex font-extralight overflow-hidden"
       onMouseLeave={() => setActiveIndex(defaultIndex)} // reset to خانه
     >
       {menuItems.map((item, i) => (
         <div
           key={i}
           onMouseEnter={() => setActiveIndex(i)}
-          className="w-1/5 h-full flex justify-center items-center cursor-pointer"
+          className="w-1/5 h-full flex justify-center items-center cursor-pointer xl:text-base lg:text-sm md:text-xs transition-all duration-300"
         >
           {item}
         </div>
@@ -26,8 +26,13 @@ export default function Navbar() {
       {/* Highlight Indicator */}
       <motion.div
         layout
-        transition={{ type: "spring", stiffness: 400, damping: 30, delay: 0.15 }}
-        className="absolute top-0 h-full w-1/5 rounded-full bg-white/5"
+        transition={{
+          type: "spring",
+          stiffness: 400,
+          damping: 30,
+          delay: 0.15,
+        }}
+        className="absolute top-0 h-full w-1/5 rounded-full bg-gradient-to-br  from-white/10 from-10% to-transparent to-60% shadow-inner shadow-white/10 border-t border-l border-t-white/20 border-l-white/20 border-b border-b-white/10 border-r border-r-white/10 "
         style={{
           left: `${
             ((menuItems.length - 1 - activeIndex) / menuItems.length) * 100

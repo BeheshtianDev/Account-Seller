@@ -26,7 +26,7 @@ body {
   display: none; /* For Chrome, Safari, and Opera */
 }
 * {
-  cursor: none !important;
+  /* cursor: none !important; */
 }
 @layer utilities {
   .scroll-hidden::-webkit-scrollbar {
