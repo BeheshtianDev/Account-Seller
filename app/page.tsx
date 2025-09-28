@@ -2,7 +2,7 @@ import Header from "@/components/Header/Header";
 
 export default function Home() {
   return (
-    <div className=" w-full flex justify-start flex-col items-center h-auto relative ">
+    <div className=" w-full flex justify-start flex-col items-center h-auto relative bg-[#151211]">
       <div className="h-screen w-full flex flex-col gap-2 justify-start items-center relative overflow-hidden ">
         {/* gradiant start */}
         <div className="w-[145vw] h-[100vw] rounded-[50%]   border-8 absolute opacity-35 blur-lg -bottom-[79.5vw] z-20"></div>
@@ -17,7 +17,7 @@ export default function Home() {
 
         {/* content start */}
         <Header />
-        <span className="lg:text-[3.5vw] text-[6vw] text-center  mt-52 ">
+        <span className="lg:text-[3.5vw] text-[6vw] text-center  mt-[22vh] ">
           دسترسی به تمام سرویس‌های پرمیوم <br />
           در یک کلیک
         </span>
