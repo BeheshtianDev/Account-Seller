@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className=" w-full flex justify-start flex-col items-center h-auto relative ">
-      <div className="h-screen w-full flex flex-col justify-start items-center relative ">
+      <div className="h-screen w-full flex flex-col justify-start items-center relative overflow-hidden ">
         <div className="w-[145vw] h-[100vw] rounded-[50%]   border-8 absolute opacity-35 blur-lg -bottom-[79.5vw] z-20"></div>
         <div className="w-[150vw] h-[100vw] rounded-[50%]  bg-[#111111]  absolute opacity-90 -bottom-[80vw] blur-[3px] z-20"></div>
         {/* <div className="w-[150vw] h-[100vw] rounded-[50%]  border-4 absolute border-orange-700 opacity-20 -bottom-[80vw] z-20"></div> */}
