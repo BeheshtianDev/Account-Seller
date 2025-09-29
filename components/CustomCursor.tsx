@@ -99,7 +99,7 @@ export default function CustomCursor() {
   return (
     <div
       ref={innerRef}
-      className="pointer-events-none fixed top-0 left-0 w-5 h-5 bg-[#f8f8f8] rounded-full mix-blend-difference z-[9999]"
+      className="pointer-events-none fixed top-0 left-0 w-5 h-5  grayscale rounded-full backdrop-invert z-[9999]"
       style={{ transform: "translate(-50%, -50%)" }}
     />
   );

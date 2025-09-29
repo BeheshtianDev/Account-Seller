@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState, useEffect, useRef } from "react";
 
 const menuItems = [
@@ -72,13 +73,18 @@ function MobileMenu() {
             `,
         }}
       >
-        <Image
-          src="/home-icon.svg"
-          alt=""
-          width={22}
-          height={22}
-          className="z-10 mb-[2.1px] lg:block hidden"
-        />
+        <Link
+          href="/"
+          className="w-[42px] h-[42px] justify-center items-center lg:flex hidden"
+        >
+          <Image
+            src="/home-icon.svg"
+            alt=""
+            width={20}
+            height={22}
+            className="z-10 mb-[2.1px] "
+          />
+        </Link>
 
         {/* Hamburger / Close button */}
         <div

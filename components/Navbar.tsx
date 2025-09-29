@@ -10,7 +10,7 @@ export default function Navbar() {
 
   return (
     <div
-      className="relative w-[35vw] h-[50px] rounded-full border border-white/20 shadow-xl shadow-black/20 backdrop-blur-lg backdrop-brightness-200 bg-gradient-to-br hidden from-white/5 from-10% to-transparent to-60% lg:flex font-extralight overflow-hidden"
+      className="relative w-[35vw] h-[50px] rounded-full border border-white/20 shadow-xl shadow-black/20 backdrop-blur-lg backdrop-brightness-200 bg-gradient-to-br hidden from-white/5 from-10% to-transparent to-60% lg:flex font-extralight overflow-hidden select-none"
       onMouseLeave={() => setActiveIndex(defaultIndex)} // reset to خانه
     >
       {menuItems.map((item, i) => (
