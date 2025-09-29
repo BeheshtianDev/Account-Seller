@@ -1,18 +1,45 @@
 import Header from "@/components/Header/Header";
+import Image from "next/image";
 
 export default function Home() {
+  const particles = Array.from({ length: 30 }); // 20 particles
   return (
-    <div className=" w-full flex justify-start flex-col items-center h-auto relative bg-[#151211]">
+    <div className=" w-full flex justify-start flex-col items-center h-auto relative bg-[#161218]">
       <div className="h-screen w-full flex flex-col gap-2 justify-start items-center relative overflow-hidden ">
         {/* gradiant start */}
         <div className="w-[145vw] h-[100vw] rounded-[50%]   border-8 absolute opacity-35 blur-lg -bottom-[79.5vw] z-20"></div>
-        <div className="w-[150vw] h-[100vw] rounded-[50%]  bg-[#111111]  absolute opacity-90 lg:-bottom-[80vw] md:-bottom-[72vw] -bottom-[42vw] blur-[3px] z-20"></div>
-        <div className="w-[130vw] h-[105vw] rounded-[50%]  bg-purple-800 absolute lg:opacity-40 opacity-80 lg:-bottom-[78vw] md:-bottom-[70vw] -bottom-[40vw]  blur-[50px] z-10"></div>
-        <div className="flex  absolute top-48 rotate-45 -left-[8vw] blur-[200px] opacity-50  z-30">
-          <div className="w-[20vw] h-[20vw] rounded-full   shadow-2xl shadow-purple-800   bg-purple-800"></div>
-          <div className="w-[20vw] h-[20vw] rounded-full   shadow-2xl shadow-purple-800   bg-purple-800"></div>
-        </div>
-        <div className="w-[20vw] h-[20vw] rounded-full blur-[200px] opacity-50 shadow-2xl shadow-purple-800 absolute right-[8vw] z-20 top-[30vh] bg-purple-800 "></div>
+        <div className="w-[150vw] h-[100vw] rounded-[50%]  bg-[#111111]  absolute opacity-90 lg:-bottom-[80vw] md:-bottom-[72vw] -bottom-[42vw] blur-[1.5px] z-20"></div>
+        <div className="w-[130vw] h-[105vw] rounded-[50%]  bg-[#46205d] absolute hue-rotate-[1deg]  lg:-bottom-[78vw] md:-bottom-[70vw] -bottom-[40vw]  blur-[50px] z-10"></div>
+
+        <Image
+          src="/HOLLOW.png"
+          alt=""
+          width={1300}
+          height={1200}
+          className="animate-float-1 absolute opacity-90 mix-blend-lighten  hue-rotate-[-15deg] -left-80 bottom-0 scale-x-75 -rotate-45 "
+        />
+        <Image
+          src="/HOLLOW.png"
+          alt=""
+          width={1000}
+          height={1000}
+          className="animate-float-2 absolute opacity-90 mix-blend-lighten  hue-rotate-[-15deg] right-0 bottom-0"
+        />
+        {/* White Particles */}
+        {particles.map((_, i) => (
+          <div
+            key={i}
+            className="particle"
+            style={{
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              width: `${Math.random() * 1 + 2}px`, // 2–6px size
+              height: `${Math.random() * 1 + 2}px`,
+              animationDuration: `${Math.random() * 5 + 4}s`, // 4–9s speed
+              animationDelay: `${Math.random() * 2}s`,
+            }}
+          />
+        ))}
         {/* gradiant end */}
 
         {/* content start */}
