@@ -12,14 +12,14 @@ export default function Home() {
         <div className="w-[130vw] h-[105vw] rounded-[50%]  bg-[#46205d] absolute hue-rotate-[1deg]  lg:-bottom-[78vw] md:-bottom-[70vw] -bottom-[40vw]  blur-[50px] z-10"></div>
 
         <Image
-          src="/HOLLOW.png"
+          src="/hollow.png"
           alt=""
           width={1300}
           height={1200}
           className="animate-float-1 absolute opacity-90 mix-blend-lighten  hue-rotate-[-15deg] -left-80 bottom-0 scale-x-75 -rotate-45 "
         />
         <Image
-          src="/HOLLOW.png"
+          src="/hollow.png"
           alt=""
           width={1000}
           height={1000}
