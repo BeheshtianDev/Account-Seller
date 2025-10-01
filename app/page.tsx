@@ -71,15 +71,21 @@ export default function Home() {
           </button>
         </div>
 
-        <div className="flex gap-5 z-20 mt-10">
-          <div className="w-96 h-14 rounded-full bg-gradient-to-br  from-white/5 from-10% to-transparent to-60%  border-t border-l border-t-white/20 border-l-white/20 border-b border-b-white/10 border-r border-r-white/10  backdrop-blur-lg overflow-hidden backdrop-brightness-105 ">
+           <div className="flex  z-20  justify-center items-center mt-10 relative">
+          <div className="w-96 h-14 rounded-full bg-gradient-to-br flex justify-center items-center -ml-2 from-white/5 from-10% to-transparent to-60%  border border-white/10    backdrop-blur-lg overflow-hidden backdrop-brightness-105 ">
             <input
               placeholder="اسم سرویس یا دسته بندی"
               type="text"
               className=" font-extralight text-white/80 w-full h-full outline-none pr-10 caret-white/30"
             />
           </div>
-          <button className="w-14 h-14 rounded-full group bg-gradient-to-br flex justify-center items-center from-white/5 from-10% to-transparent to-60%  border-t border-l border-t-white/20 border-l-white/20 border-b border-b-white/10 border-r border-r-white/10  backdrop-blur-lg overflow-hidden backdrop-brightness-105">
+          <div className="w-6 h-[22px] left-[75px]  rounded-full bg-gradient-to-l from-[#322E2D] via-[#353130] via-80% to-[#322F2E] to-95% blur-[1px] z-10 absolute"></div>
+          <div className="w-6 h-[22px] left-[35px] rotate-180  rounded-full bg-[#2C2827] blur-[1px] z-10 absolute"></div>
+          <div className="flex gap-2 flex-col bg-gradient-to-r from-[#2C2827] to-[#322F2E] rounded-full">
+            <div className="h-10 w-10 rounded-full border-b-[1px] border-b-white/20 bg-stone-800"></div>
+            <div className="h-10 w-10 rounded-full border-t border-t-white/20 bg-stone-800"></div>
+          </div>
+          <button className="w-14 h-14 -mr-2  rounded-full group bg-gradient-to-br flex justify-center items-center from-white/5 from-10% to-transparent to-60%  border border-white/10  backdrop-blur-lg overflow-hidden backdrop-brightness-105">
             <Image
               src="/search-icon.svg"
               alt=""
