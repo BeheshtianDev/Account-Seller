@@ -53,7 +53,7 @@ export default function Home() {
         <span className="lg:text-[1.3vw] text-[3vw] font-thin ">
           ابزارهای ادیت , هوش مصنوعی و سرویس های سرگرمی و موزیک
         </span>
-        <div className="w-auto flex h-[50px] z-20 rounded-full bg-gradient-to-br  from-white/5 from-10% to-transparent to-60%  border-t border-l border-t-white/20 border-l-white/20 border-b border-b-white/10 border-r border-r-white/10  backdrop-blur-lg overflow-hidden backdrop-brightness-105 ">
+        {/* <div className="w-auto flex h-[50px] z-20 rounded-full bg-gradient-to-br  from-white/5 from-10% to-transparent to-60%  border-t border-l border-t-white/20 border-l-white/20 border-b border-b-white/10 border-r border-r-white/10  backdrop-blur-lg overflow-hidden backdrop-brightness-105 ">
           <input
             placeholder="اسم سرویس یا دسته بندی"
             type="text"
@@ -69,9 +69,9 @@ export default function Home() {
               className="opacity-50 "
             />
           </button>
-        </div>
+        </div> */}
 
-              <div className="flex gap-5 z-20 mt-10">
+              <div className="flex gap-5 z-20 mt-5">
           <div className="w-96 h-14 rounded-full bg-gradient-to-br  from-white/5 from-10% to-transparent to-60%  border-t border-l border-t-white/20 border-l-white/20 border-b border-b-white/10 border-r border-r-white/10  backdrop-blur-lg overflow-hidden backdrop-brightness-105 ">
             <input
               placeholder="اسم سرویس یا دسته بندی"
