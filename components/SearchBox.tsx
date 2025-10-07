@@ -33,7 +33,7 @@ export default function SearchBox() {
   );
 
   return (
-    <div className="relative flex flex-col z-20">
+    <div className="relative flex flex-col z-30">
       <div className="flex gap-5 lg:mt-5 mt-16">
         <div
           className={`lg:w-96 h-12 w-64 lg:h-14 rounded-full bg-gradient-to-br from-white/5 from-10% to-transparent to-60% border-t border-l border-t-white/20 border-l-white/20 border-b border-b-white/10 border-r border-r-white/10 backdrop-blur-lg overflow-hidden backdrop-brightness-105
@@ -54,7 +54,7 @@ export default function SearchBox() {
             <button
               type="button"
               onClick={() => setQuery("")}
-              className={`absolute top-[28px] -translate-y-1/2 text-white/60 hover:text-white
+              className={`absolute lg:top-[28px] top-[23px] -translate-y-1/2 text-white/60 hover:text-white
             ${typingEnglish ? "right-5" : "left-5"}`}
             >
               ✕
@@ -72,29 +72,29 @@ export default function SearchBox() {
           />
         </button>
       </div>
-
       {/* Suggestions dropdown */}
       {query && filtered.length > 0 && (
         <ul
-          className={`absolute top-full mt-2 w-64 lg:w-96 text-white/90 max-h-60 overflow-y-scroll overflow-x-hidden rounded-4xl shadow-lg z-50  border-t border-l border-t-white/20 border-l-white/20 border-b border-b-white/10 border-r border-r-white/10 backdrop-blur-lg transition-all duration-500 dropdown-scroll
-            scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent hover:scrollbar-thumb-white/40 
-            ${typingEnglish ? "eng" : ""}`}
+          className={`absolute top-full mt-2 w-64 lg:w-96  text-white/90 max-h-60 overflow-y-auto overflow-x-hidden rounded-4xl shadow-lg z-50 border-t border-l border-t-white/20 border-l-white/20 border-b border-b-white/10 border-r border-r-white/10 backdrop-blur-lg transition-all duration-500 dropdown-scroll 
+      ${typingEnglish ? "eng" : ""}`}
         >
           {filtered.map((service) => (
             <li
               key={service.slug}
-              className="lg:w-96 h-12 w-64 lg:h-14 hover:bg-white/2 rounded-full border border-white/0  hover:border-white/20 transition-all  duration-300"
+              className="lg:w-96 h-12 w-64 lg:h-14 hover:bg-white/2 rounded-full border border-white/0 hover:border-white/20 transition-all duration-300"
             >
               <Link
                 href={`/${service.slug}`}
-                className="w-full  h-full flex justify-start  items-center px-5 font-extralight"
+                className="w-full h-full  flex justify-start items-center px-5 font-extralight"
               >
                 {typingEnglish ? service.name : service.nameFa}
               </Link>
             </li>
           ))}
+        
         </ul>
       )}
+      
     </div>
   );
 }

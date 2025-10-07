@@ -63,23 +63,6 @@ export default function Home() {
         <span className="lg:text-[1.3vw] text-[3vw] font-thin ">
           ابزارهای ادیت , هوش مصنوعی و سرویس های سرگرمی و موزیک
         </span>
-        {/* <div className="w-auto flex h-[50px] z-20 rounded-full bg-gradient-to-br  from-white/5 from-10% to-transparent to-60%  border-t border-l border-t-white/20 border-l-white/20 border-b border-b-white/10 border-r border-r-white/10  backdrop-blur-lg overflow-hidden backdrop-brightness-105 ">
-          <input
-            placeholder="اسم سرویس یا دسته بندی"
-            type="text"
-            className="w-96 font-extralight text-white/80  h-full outline-none pr-10 caret-white/30"
-          />
-          <button className="h-full w-[50px] rounded-full flex justify-center items-center font-extralight bg-purple-800/90 relative">
-            <div className="shadow-1 w-full h-full rounded-full bg-gradient-to-br absolute from-white/25 from-10% to-transparent to-60% border border-white/20  shadow-inner shadow-white/10" />
-            <Image
-              src="/search-icon.svg"
-              alt=""
-              width={25}
-              height={25}
-              className="opacity-50 "
-            />
-          </button>
-        </div> */}
 
         <SearchBox />
         <div
