@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 const services = [
@@ -19,18 +20,30 @@ const services = [
 
 export default function SearchBox() {
   const [query, setQuery] = useState("");
+  const router = useRouter();
 
   // تابع تشخیص فارسی
   const isPersian = (text: string) => /[\u0600-\u06FF]/.test(text);
   const typingEnglish = query && !isPersian(query);
 
+  // trim و بررسی اینکه فقط space نباشه
+  const trimmedQuery = query.trim();
+
   const filtered = services.filter((service) =>
-    query
+    trimmedQuery
       ? typingEnglish
-        ? service.name.toLowerCase().includes(query.toLowerCase()) // فقط انگلیسی
-        : service.nameFa.includes(query) // فقط فارسی
+        ? service.name.toLowerCase().includes(trimmedQuery.toLowerCase())
+        : service.nameFa.includes(trimmedQuery)
       : false
   );
+
+  const handleSearchClick = () => {
+    if (!trimmedQuery) {
+      router.push("/categories"); // صفحه دسته‌بندی‌ها
+    } else if (filtered.length > 0) {
+      router.push(`/${filtered[0].slug}`); // اولین پیشنهاد
+    }
+  };
 
   return (
     <div className="relative flex flex-col z-30">
@@ -62,7 +75,10 @@ export default function SearchBox() {
           )}
         </div>
 
-        <button className="lg:w-14 w-12 h-12 lg:h-14 rounded-full group bg-gradient-to-br flex justify-center items-center from-white/5 from-10% to-transparent to-60% border-t border-l border-t-white/20 border-l-white/20 border-b border-b-white/10 border-r border-r-white/10 backdrop-blur-lg overflow-hidden backdrop-brightness-105">
+        <button
+          onClick={handleSearchClick}
+          className="lg:w-14 w-12 h-12 lg:h-14 rounded-full group bg-gradient-to-br flex justify-center items-center from-white/5 from-10% to-transparent to-60% border-t border-l border-t-white/20 border-l-white/20 border-b border-b-white/10 border-r border-r-white/10 backdrop-blur-lg overflow-hidden backdrop-brightness-105"
+        >
           <Image
             src="/search-icon.svg"
             alt=""
@@ -72,8 +88,9 @@ export default function SearchBox() {
           />
         </button>
       </div>
+
       {/* Suggestions dropdown */}
-      {query && filtered.length > 0 && (
+      {trimmedQuery && filtered.length > 0 && (
         <ul
           className={`absolute top-full mt-2 w-64 lg:w-96  text-white/90 max-h-60 overflow-y-auto overflow-x-hidden rounded-4xl shadow-lg z-50 border-t border-l border-t-white/20 border-l-white/20 border-b border-b-white/10 border-r border-r-white/10 backdrop-blur-lg transition-all duration-500 dropdown-scroll 
       ${typingEnglish ? "eng" : ""}`}
@@ -91,10 +108,8 @@ export default function SearchBox() {
               </Link>
             </li>
           ))}
-        
         </ul>
       )}
-      
     </div>
   );
 }
