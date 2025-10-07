@@ -5,7 +5,7 @@ import React, { useState, useEffect, useRef } from "react";
 
 const menuItems = [
   { label: "خانه", icon: "/home-icon.svg", width: 16, height: 22 },
-  { label: "دسته بندی", icon: "/category-icon.svg", width: 18, height: 22 },
+  { label: "دسته بندی ها", icon: "/category-icon.svg", width: 18, height: 22 },
   { label: "تخفیف ها", icon: "/category-icon.svg", width: 18, height: 20 },
   { label: "راهنما", icon: "/category-icon.svg", width: 18, height: 21 },
   { label: "تماس", icon: "/phone-icon.svg", width: 16, height: 22 },
@@ -57,7 +57,7 @@ function MobileMenu() {
           bg-gradient-to-br border border-white/10 shadow-xl shadow-black/20 backdrop-blur-lg backdrop-brightness-200 
           from-white/10 from-10% to-transparent to-60%"
         style={{
-          borderRadius: isOpen ? "40px" : "9999px",
+          borderRadius: isOpen ? "30px" : "9999px",
           width: isOpen ? "100%" : "42px",
           height: isOpen ? "350px" : "42px",
           transition: isOpen

@@ -1,6 +1,13 @@
 import Header from "@/components/Header/Header";
 import Image from "next/image";
-
+import Link from "next/link";
+const logos = [
+  "/Spotify-logo.png",
+  "/Netflix-logo.png",
+  "/AppleMusic-logo.png",
+  "/YouTube-logo.png",
+  "/HBO-logo.png",
+];
 export default function Home() {
   const particles = Array.from({ length: 30 }); // 20 particles
   return (
@@ -71,23 +78,76 @@ export default function Home() {
           </button>
         </div> */}
 
-              <div className="flex gap-5 z-20 mt-5">
-          <div className="w-96 h-14 rounded-full bg-gradient-to-br  from-white/5 from-10% to-transparent to-60%  border-t border-l border-t-white/20 border-l-white/20 border-b border-b-white/10 border-r border-r-white/10  backdrop-blur-lg overflow-hidden backdrop-brightness-105 ">
+        <div className="flex gap-5 z-20 lg:mt-5 mt-16">
+          <div className="lg:w-96 h-12 w-64 lg:h-14 rounded-full bg-gradient-to-br  from-white/5 from-10% to-transparent to-60%  border-t border-l border-t-white/20 border-l-white/20 border-b border-b-white/10 border-r border-r-white/10  backdrop-blur-lg overflow-hidden backdrop-brightness-105 ">
             <input
               placeholder="اسم سرویس یا دسته بندی"
               type="text"
-              className=" font-extralight text-white/80 w-full h-full outline-none pr-10 caret-white/30"
+              className=" font-extralight text-white/80 w-full h-full outline-none lg:pr-10 pr-5 caret-white/30"
             />
           </div>
-          <button className="w-14 h-14 rounded-full group bg-gradient-to-br flex justify-center items-center from-white/5 from-10% to-transparent to-60%  border-t border-l border-t-white/20 border-l-white/20 border-b border-b-white/10 border-r border-r-white/10  backdrop-blur-lg overflow-hidden backdrop-brightness-105">
+          <button className="lg:w-14 w-12 h-12 lg:h-14 rounded-full group bg-gradient-to-br flex justify-center items-center from-white/5 from-10% to-transparent to-60%  border-t border-l border-t-white/20 border-l-white/20 border-b border-b-white/10 border-r border-r-white/10  backdrop-blur-lg overflow-hidden backdrop-brightness-105">
             <Image
               src="/search-icon.svg"
               alt=""
               width={25}
               height={25}
-              className="opacity-50 "
+              className="opacity-50 lg:w-[25px] w-[20px]"
             />
           </button>
+        </div>
+        <div
+          dir="LTR"
+          className="w-3/4 overflow-hidden absolute bottom-[3vw] h-32 z-20 "
+        >
+          <div className="absolute w-1/12 h-full bg-gradient-to-l from-[#161218]  to-transparent   right-0  z-10"></div>
+          <div className="absolute w-1/12 h-full bg-gradient-to-r from-[#161218]  to-transparent    left-0 z-10"></div>
+          <div className=" animate-marquee lg:gap-16 gap-5 brightness-75  flex justify-center items-center ">
+            {logos.map((logo, i) => {
+              const slug = logo
+                .replace("/", "") // remove starting slash
+                .replace("-logo", "") // remove '-logo'
+                .replace(/\.(png|jpg|jpeg|svg)/gi, "") // remove extension
+                .toLowerCase();
+
+              return (
+                <div key={i}>
+                  <Link href={`/${slug}`}>
+                    <Image
+                      src={logo}
+                      alt={`logo-${i}`}
+                      width={200}
+                      height={25}
+                      className="object-contain lg:w-[9vw] w-[20vw]"
+                    />
+                  </Link>
+                </div>
+              );
+            })}
+
+            {/* duplicate logos for seamless looping */}
+            {logos.map((logo, i) => {
+              const slug = logo
+                .replace("/", "")
+                .replace("-logo", "")
+                .replace(/\.(png|jpg|jpeg|svg)/gi, "")
+                .toLowerCase();
+
+              return (
+                <div key={`dup-${i}`}>
+                  <Link href={`/${slug}`}>
+                    <Image
+                      src={logo}
+                      alt={`logo-dup-${i}`}
+                      width={200}
+                      height={25}
+                      className="object-contain lg:w-[9vw] w-[15vw]"
+                    />
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
         </div>
         {/* content end */}
       </div>
