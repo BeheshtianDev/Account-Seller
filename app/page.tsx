@@ -1,12 +1,15 @@
 import Header from "@/components/Header/Header";
+import SearchBox from "@/components/SearchBox";
 import Image from "next/image";
 import Link from "next/link";
 const logos = [
   "/Spotify-logo.png",
+  "/PS-logo.png",
+  "/HBO-logo.png",
   "/Netflix-logo.png",
   "/AppleMusic-logo.png",
   "/YouTube-logo.png",
-  "/HBO-logo.png",
+  "/ChatGPT-logo.png",
 ];
 export default function Home() {
   const particles = Array.from({ length: 30 }); // 20 particles
@@ -78,24 +81,7 @@ export default function Home() {
           </button>
         </div> */}
 
-        <div className="flex gap-5 z-20 lg:mt-5 mt-16">
-          <div className="lg:w-96 h-12 w-64 lg:h-14 rounded-full bg-gradient-to-br  from-white/5 from-10% to-transparent to-60%  border-t border-l border-t-white/20 border-l-white/20 border-b border-b-white/10 border-r border-r-white/10  backdrop-blur-lg overflow-hidden backdrop-brightness-105 ">
-            <input
-              placeholder="اسم سرویس یا دسته بندی"
-              type="text"
-              className=" font-extralight text-white/80 w-full h-full outline-none lg:pr-10 pr-5 caret-white/30"
-            />
-          </div>
-          <button className="lg:w-14 w-12 h-12 lg:h-14 rounded-full group bg-gradient-to-br flex justify-center items-center from-white/5 from-10% to-transparent to-60%  border-t border-l border-t-white/20 border-l-white/20 border-b border-b-white/10 border-r border-r-white/10  backdrop-blur-lg overflow-hidden backdrop-brightness-105">
-            <Image
-              src="/search-icon.svg"
-              alt=""
-              width={25}
-              height={25}
-              className="opacity-50 lg:w-[25px] w-[20px]"
-            />
-          </button>
-        </div>
+        <SearchBox />
         <div
           dir="LTR"
           className="w-3/4 overflow-hidden absolute bottom-[3vw] h-32 z-20 "
@@ -118,7 +104,7 @@ export default function Home() {
                       alt={`logo-${i}`}
                       width={200}
                       height={25}
-                      className="object-contain lg:w-[9vw] w-[20vw]"
+                      className="object-contain lg:w-[8vw] w-[20vw]"
                     />
                   </Link>
                 </div>
@@ -141,7 +127,7 @@ export default function Home() {
                       alt={`logo-dup-${i}`}
                       width={200}
                       height={25}
-                      className="object-contain lg:w-[9vw] w-[15vw]"
+                      className="object-contain lg:w-[8vw] w-[15vw]"
                     />
                   </Link>
                 </div>

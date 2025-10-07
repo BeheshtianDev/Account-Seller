@@ -12,7 +12,7 @@ const columns = [
       items: ["Spotify Premium", "Apple Music", "SoundCloud"],
     },
     {
-      title: "فیلم و سریال و ویدیو",
+      title: "فیلم,سریال و ویدیو",
       items: ["Netflix Premium", "YouTube Premium", "HBO Max"],
     },
     {
@@ -23,12 +23,12 @@ const columns = [
   // ستون دوم
   [
     {
-      title: "ابزارهای هوش مصنوعی",
+      title: "هوش مصنوعی",
       items: ["ChatGPT Plus", "Midjourney", "QuillBot Premium"],
     },
     {
       title: "طراحی و ادیت",
-      items: ["Adobe Creative Cloud", "Canva Pro", "CapCut Pro"],
+      items: ["Adobe Creative", "Canva Pro", "CapCut Pro"],
     },
     {
       title: "موسیقی و پادکست",
@@ -42,11 +42,11 @@ const columns = [
       items: ["Xbox Game Pass", "PlayStation Plus", "EA Play"],
     },
     {
-      title: "فضای ابری و ذخیره‌سازی",
+      title: "فضای ذخیره‌سازی",
       items: ["Google One", "Dropbox Premium", "iCloud+"],
     },
     {
-      title: "ابزارهای کاری و بهره‌وری",
+      title: "ابزارهای کاری",
       items: ["Notion Plus", "Slack Pro", "Microsoft 365"],
     },
   ],
