@@ -80,7 +80,7 @@ export default function SearchBox() {
           className="lg:w-14 w-12 h-12 lg:h-14 rounded-full group bg-gradient-to-br flex justify-center items-center from-white/5 from-10% to-transparent to-60% border-t border-l border-t-white/20 border-l-white/20 border-b border-b-white/10 border-r border-r-white/10 backdrop-blur-lg overflow-hidden backdrop-brightness-105"
         >
           <Image
-            src="/search-icon.svg"
+            src="/icons/search-icon.svg"
             alt=""
             width={25}
             height={25}

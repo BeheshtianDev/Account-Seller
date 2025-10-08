@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function ButtonHighlight() {
   const defaultIndex = 1; // highlight default = ثبت نام
@@ -12,19 +13,21 @@ export default function ButtonHighlight() {
       onMouseLeave={() => setActiveIndex(defaultIndex)} // reset to default
     >
       {/* Buttons */}
-      <button
+      <Link
+        href="/login"
         className="register w-[80px] pb-[3px] h-full flex justify-center items-center z-10 rounded-full"
         onMouseEnter={() => setActiveIndex(0)}
       >
         ثبت نام
-      </button>
+      </Link>
 
-      <button
+      <Link
+        href="/login"
         className="w-[80px] pb-1 flex justify-center items-center h-full z-10 rounded-full"
         onMouseEnter={() => setActiveIndex(1)}
       >
         ورود
-      </button>
+      </Link>
 
       {/* Highlight */}
       <motion.div

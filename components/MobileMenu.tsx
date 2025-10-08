@@ -4,11 +4,11 @@ import Link from "next/link";
 import React, { useState, useEffect, useRef } from "react";
 
 const menuItems = [
-  { label: "خانه", icon: "/home-icon.svg", width: 16, height: 22 },
-  { label: "دسته بندی ها", icon: "/category-icon.svg", width: 18, height: 22 },
-  { label: "تخفیف ها", icon: "/category-icon.svg", width: 18, height: 20 },
-  { label: "راهنما", icon: "/category-icon.svg", width: 18, height: 21 },
-  { label: "تماس", icon: "/phone-icon.svg", width: 16, height: 22 },
+  { label: "خانه", icon: "/icons/home-icon.svg", width: 16, height: 22 },
+  { label: "دسته بندی ها", icon: "/icons/category-icon.svg", width: 18, height: 22 },
+  { label: "تخفیف ها", icon: "/icons/category-icon.svg", width: 18, height: 20 },
+  { label: "راهنما", icon: "/icons/category-icon.svg", width: 18, height: 21 },
+  { label: "تماس", icon: "/icons/phone-icon.svg", width: 16, height: 22 },
 ];
 
 function MobileMenu() {
@@ -78,7 +78,7 @@ function MobileMenu() {
           className="w-[42px] h-[42px] justify-center items-center lg:flex hidden"
         >
           <Image
-            src="/home-icon.svg"
+            src="/icons/home-icon.svg"
             alt=""
             width={20}
             height={22}
@@ -150,7 +150,7 @@ function MobileMenu() {
               </div>
 
               <div className="w-4 h-4 flex justify-center items-center rounded-full border opacity-90">
-                <Image src="/arrow-left.svg" alt="" width={10} height={20} />
+                <Image src="/icons/arrow-left.svg" alt="" width={10} height={20} />
               </div>
             </div>
           ))}

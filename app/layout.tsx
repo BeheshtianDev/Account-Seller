@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import CustomCursor from "@/components/CustomCursor";
+import Header from "@/components/hero/Header/Header";
 
 const peyda = localFont({
   src: [
@@ -87,7 +88,6 @@ const eng = localFont({
       weight: "300",
       style: "normal",
     },
-
   ],
   variable: "--font-eng",
 });
@@ -103,7 +103,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" dir="rtl">
-      <body className={`${peyda.variable} ${eng.variable}`} suppressHydrationWarning>
+      <body
+        className={`${peyda.variable} ${eng.variable}`}
+        suppressHydrationWarning
+      >
+        <Header />
         <SmoothScroll /> {/* 👈 Lenis client logic here */}
         <CustomCursor />
         {children}

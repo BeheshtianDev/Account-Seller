@@ -64,13 +64,13 @@ export default function Navbar() {
     >
       <div className="w-full h-[50px] flex ">
         {menuItems.map((item, i) => (
-          <div
+          <Link href="/categories"
             key={i}
             onMouseEnter={() => setActiveIndex(i)}
-            className="w-1/5 h-full flex justify-center items-center cursor-pointer xl:text-base lg:text-sm md:text-xs transition-all duration-300"
+            className="w-1/5 h-full flex justify-center items-center cursor-pointer xl:text-base lg:text-sm md:text-xs z-10 transition-all duration-300"
           >
             {item}
-          </div>
+          </Link>
         ))}
       </div>
       <div
