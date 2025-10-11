@@ -16,7 +16,7 @@ export default function BackgroundGradient() {
 
       {/* --- Floating Hollow Images --- */}
       <Image
-        src="/hollow.png"
+        src="/logos/hollow.webp"
         draggable={false}
         alt="background-float-left"
         width={1300}
@@ -24,7 +24,7 @@ export default function BackgroundGradient() {
         className="animate-float-1 absolute opacity-90 mix-blend-lighten hue-rotate-[-15deg] -left-80 bottom-0 scale-x-75 -rotate-45 select-none"
       />
       <Image
-        src="/hollow.png"
+        src="/logos/hollow.webp"
         draggable={false}
         alt="background-float-right"
         width={1000}

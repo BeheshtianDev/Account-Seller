@@ -4,13 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 const logos = [
-  "/logos/Spotify-logo.png",
-  "/logos/PS-logo.png",
-  "/logos/HBO-logo.png",
-  "/logos/Netflix-logo.png",
-  "/logos/AppleMusic-logo.png",
-  "/logos/YouTube-logo.png",
-  "/logos/ChatGPT-logo.png",
+  "/logos/Spotify-logo.webp",
+  "/logos/PS-logo.webp",
+  "/logos/HBO-logo.webp",
+  "/logos/Netflix-logo.webp",
+  "/logos/AppleMusic-logo.webp",
+  "/logos/YouTube-logo.webp",
+  "/logos/ChatGPT-logo.webp",
 ];
 
 export default function LogoMarquee() {
@@ -24,7 +24,7 @@ export default function LogoMarquee() {
       <div className="absolute w-1/12 h-full bg-gradient-to-r from-[#161218] to-transparent left-0 z-10" />
 
       {/* Scrolling logos */}
-      <div className="animate-marquee lg:gap-16 gap-5 brightness-75 flex justify-center items-center">
+      <div className="animate-marquee lg:gap-16 gap-5  flex justify-center items-center">
         {[...logos, ...logos].map((logo, i) => {
           const slug = logo
             .replace("/", "")
@@ -40,7 +40,7 @@ export default function LogoMarquee() {
                   alt={`${slug}-logo`}
                   width={200}
                   height={25}
-                  className="object-contain lg:w-[8vw] w-[15vw]"
+                  className="object-contain lg:w-[8vw] w-[15vw] brightness-[70%] hover:brightness-100 transition-all duration-300"
                 />
               </Link>
             </div>
