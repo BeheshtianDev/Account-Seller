@@ -4,13 +4,42 @@ import Link from "next/link";
 import React, { useState, useEffect, useRef } from "react";
 
 const menuItems = [
-  { label: "خانه", icon: "/icons/home-icon.svg", width: 16, height: 22 },
-  { label: "دسته بندی ها", icon: "/icons/category-icon.svg", width: 18, height: 22 },
-  { label: "تخفیف ها", icon: "/icons/category-icon.svg", width: 18, height: 20 },
-  { label: "راهنما", icon: "/icons/category-icon.svg", width: 18, height: 21 },
-  { label: "تماس", icon: "/icons/phone-icon.svg", width: 16, height: 22 },
+  {
+    label: "خانه",
+    icon: "/icons/home-icon.svg",
+    width: 16,
+    height: 22,
+    href: "/",
+  },
+  {
+    label: "دسته بندی ها",
+    icon: "/icons/category-icon.svg",
+    width: 18,
+    height: 22,
+    href: "/categories",
+  },
+  {
+    label: "تخفیف ها",
+    icon: "/icons/category-icon.svg",
+    width: 18,
+    height: 20,
+    href: "/discounts",
+  },
+  {
+    label: "راهنما",
+    icon: "/icons/category-icon.svg",
+    width: 18,
+    height: 21,
+    href: "/help",
+  },
+  {
+    label: "تماس",
+    icon: "/icons/phone-icon.svg",
+    width: 16,
+    height: 22,
+    href: "/contact",
+  },
 ];
-
 function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
   const [showItems, setShowItems] = useState(false);
@@ -126,13 +155,16 @@ function MobileMenu() {
         </div>
 
         {/* Menu items */}
+
         <div className="w-full h-full flex justify-end pt-[5vh] gap-8 pb-7 items-center flex-col font-extralight lg:hidden overflow-hidden">
           {menuItems.map((item, i) => (
-            <div
+            <Link
               key={i}
+              href={item.href || "#"} // Add href property to your menuItems
               className={`transition-all w-full justify-between items-center px-5 flex duration-500 transform 
-      ${showItems ? "opacity-100 translate-y-0" : " opacity-0 -translate-y-5"}
-    `}
+        ${
+          showItems ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-5"
+        }`}
               style={{ transitionDelay: showItems ? `${i * 0.15}s` : "-0.5s" }}
               onClick={() => {
                 setShowItems(false);
@@ -150,9 +182,14 @@ function MobileMenu() {
               </div>
 
               <div className="w-4 h-4 flex justify-center items-center rounded-full border opacity-90">
-                <Image src="/icons/arrow-left.svg" alt="" width={10} height={20} />
+                <Image
+                  src="/icons/arrow-left.svg"
+                  alt=""
+                  width={10}
+                  height={20}
+                />
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
