@@ -15,21 +15,45 @@ const menuItems = [
 const columns = [
   // ستون اول
   [
-    { title: "استریم موسیقی", items: ["Spotify Premium", "Apple Music", "SoundCloud"] },
-    { title: "فیلم، سریال و ویدیو", items: ["Netflix Premium", "YouTube Premium", "HBO Max"] },
+    {
+      title: "استریم موسیقی",
+      items: ["Spotify Premium", "Apple Music", "SoundCloud"],
+    },
+    {
+      title: "فیلم، سریال و ویدیو",
+      items: ["Netflix Premium", "YouTube Premium", "HBO Max"],
+    },
     { title: "VPN و امنیت", items: ["NordVPN", "Surfshark VPN", "ExpressVPN"] },
   ],
   // ستون دوم
   [
-    { title: "هوش مصنوعی", items: ["ChatGPT Plus", "Midjourney", "QuillBot Premium"] },
-    { title: "طراحی و ادیت", items: ["Adobe Creative", "Canva Pro", "CapCut Pro"] },
-    { title: "موسیقی و پادکست", items: ["Deezer Premium", "SoundCloud Go+", "Apple Music"] },
+    {
+      title: "هوش مصنوعی",
+      items: ["ChatGPT Plus", "Midjourney", "QuillBot Premium"],
+    },
+    {
+      title: "طراحی و ادیت",
+      items: ["Adobe Creative", "Canva Pro", "CapCut Pro"],
+    },
+    {
+      title: "موسیقی و پادکست",
+      items: ["Deezer Premium", "SoundCloud Go+", "Apple Music"],
+    },
   ],
   // ستون سوم
   [
-    { title: "گیمینگ و سرگرمی", items: ["Xbox Game Pass", "PlayStation Plus", "EA Play"] },
-    { title: "فضای ذخیره‌سازی", items: ["Google One", "Dropbox Premium", "iCloud+"] },
-    { title: "ابزارهای کاری", items: ["Notion Plus", "Slack Pro", "Microsoft 365"] },
+    {
+      title: "گیمینگ و سرگرمی",
+      items: ["Xbox Game Pass", "PlayStation Plus", "EA Play"],
+    },
+    {
+      title: "فضای ذخیره‌سازی",
+      items: ["Google One", "Dropbox Premium", "iCloud+"],
+    },
+    {
+      title: "ابزارهای کاری",
+      items: ["Notion Plus", "Slack Pro", "Microsoft 365"],
+    },
   ],
 ];
 
@@ -49,7 +73,12 @@ export default function Navbar() {
 
   const handleMouseEnter = (index: number) => {
     setActiveIndex(index); // Highlight روی هاور
-    if (index === 1) setShowDropdown(true); // فقط دسته‌بندی‌ها Dropdown
+
+    if (index === 1) {
+      setShowDropdown(true); // فقط وقتی روی دسته‌بندی‌ها هستیم
+    } else {
+      setShowDropdown(false); // در غیر این صورت ببندش
+    }
   };
 
   const handleMouseLeave = () => {
@@ -78,8 +107,8 @@ export default function Navbar() {
 
       {/* Dropdown فقط وقتی هاور روی دسته بندی ها */}
       <div
-        className={`w-full transition-all duration-[400ms] flex pr-10 overflow-hidden ${
-          showDropdown ? "h-[320px] opacity-100" : "h-0 opacity-0"
+        className={`w-full transition-all duration-[400ms] flex pr-[2vw]  overflow-hidden ${
+          showDropdown ? "h-[500px] opacity-100 pt-5" : "h-0 opacity-0 pt-0"
         }`}
       >
         {columns.map((column, colIndex) => (
@@ -126,10 +155,16 @@ export default function Navbar() {
       {/* Highlight Indicator */}
       <motion.div
         layout
-        transition={{ type: "spring", stiffness: 400, damping: 30, delay: 0.15 }}
+        transition={{
+          type: "spring",
+          stiffness: 400,
+          damping: 30,
+        }}
         className="absolute top-0 h-[50px] w-1/5 rounded-[100px] bg-gradient-to-br from-white/10 from-10% to-transparent to-60% shadow-inner shadow-white/10 border-t border-l border-t-white/20 border-l-white/20 border-b border-b-white/10 border-r border-r-white/10"
         style={{
-          left: `${((menuItems.length - 1 - activeIndex) / menuItems.length) * 100}%`,
+          left: `${
+            ((menuItems.length - 1 - activeIndex) / menuItems.length) * 100
+          }%`,
         }}
       />
     </div>
