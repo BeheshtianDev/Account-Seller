@@ -6,8 +6,11 @@ export default function Home() {
   return (
     <div className=" w-full flex justify-start flex-col items-center h-auto relative  select-none">
       <HeroSection />
-      <div className="max-h-[50vh] w-full z-20 bg-[#161218]  p-5 flex justify-center items-center">
-        <div dir="ltr" className="lg:grid flex lg:grid-cols-3 2xl:grid-cols-6 gap-5  justify-start lg:place-items-center  lg:w-10/12 w-full overflow-x-scroll dropdown-scroll ">
+      <div className=" h-auto min-h-[30vh] pb-10 w-full  z-20 bg-[#161218]  lg:px-5 px-2 flex justify-center items-center">
+        <div
+          dir="ltr"
+          className="lg:grid flex   lg:grid-cols-3 2xl:grid-cols-6 gap-5 sm:justify-center justify-start lg:place-items-center items-center lg:w-10/12 w-full overflow-x-scroll dropdown-scroll "
+        >
           {[...Array(6)].map((_, i) => (
             <div
               key={i}
