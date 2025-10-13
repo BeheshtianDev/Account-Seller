@@ -3,7 +3,11 @@
 import { useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
 
-export default function SmoothScroll() {
+interface SmoothScrollProps {
+  breakpoint?: number; // مثلا 768 یا 1024 یا هر چی خواستی
+}
+
+export default function SmoothScroll({ breakpoint }: SmoothScrollProps) {
   useEffect(() => {
     const lenis = new Lenis({
       lerp: 0.1,
@@ -11,18 +15,22 @@ export default function SmoothScroll() {
       touchMultiplier: 1,
     });
 
-    // Allow nested scrollable elements to scroll normally
     function stopPropagationOnNestedScroll(e: WheelEvent) {
       const target = e.target as HTMLElement;
       if (!target) return;
 
-      // check if element or its parent has 'dropdown-scroll' class
-      if (target.closest('.dropdown-scroll')) {
-        e.stopPropagation(); // prevent Lenis from hijacking the scroll
+      // اگه breakpoint مشخص شده، فقط در اون محدوده اعمال بشه
+      if (
+        (!breakpoint || window.innerWidth <= breakpoint) &&
+        target.closest(".dropdown-scroll")
+      ) {
+        e.stopPropagation();
       }
     }
 
-    document.addEventListener('wheel', stopPropagationOnNestedScroll, { passive: false });
+    document.addEventListener("wheel", stopPropagationOnNestedScroll, {
+      passive: false,
+    });
 
     function raf(time: number) {
       lenis.raf(time);
@@ -32,10 +40,10 @@ export default function SmoothScroll() {
     requestAnimationFrame(raf);
 
     return () => {
-      document.removeEventListener('wheel', stopPropagationOnNestedScroll);
+      document.removeEventListener("wheel", stopPropagationOnNestedScroll);
       lenis.destroy();
     };
-  }, []);
+  }, [breakpoint]);
 
   return null;
 }

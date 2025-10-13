@@ -1,6 +1,5 @@
 import React from "react";
 import BackgroundGradient from "../BackgroundGradient";
-import Header from "./Header/Header";
 import SearchBox from "../SearchBox";
 import LogoMarquee from "../LogoMarquee";
 
@@ -16,6 +15,10 @@ const HeroSection = () => {
         دسترسی به تمام سرویس‌های پرمیوم <br />
         در یک کلیک
       </span>
+
+      <div className="w-64 h-64  z-50  [mask-image:url('/mask-border.svg')] mx-auto flex justify-center items-center [mask-size:contain] overflow-visible [mask-repeat:no-repeat] [mask-position:center]">
+        <div className="w-64 h-64  bg-white [mask-image:url('/mask-body.svg')] [mask-size:contain] overflow-visible [mask-repeat:no-repeat] [mask-position:center]"></div>
+      </div>
       <span className="lg:text-[1.3vw] text-[3vw] font-thin ">
         ابزارهای ادیت , هوش مصنوعی و سرویس های سرگرمی و موزیک
       </span>

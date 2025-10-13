@@ -5,7 +5,7 @@ import LogoMarquee from "../LogoMarquee";
 
 function Footer() {
   return (
-    <div className="h-screen w-full flex flex-col gap-2 justify-start items-center bottom-0 overflow-hidden fixed">
+    <div className="h-[70vh] w-full flex flex-col gap-2 justify-start items-center bottom-0 overflow-hidden fixed">
       {/* gradiant start */}
       <BackgroundGradient />
 
