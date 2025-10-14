@@ -1,9 +1,43 @@
+"use client";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
 
+gsap.registerPlugin(ScrollTrigger);
 export default function FooterTwo() {
+  const innerRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const target = innerRef.current;
+    if (!target) return;
+
+    // Animate from 25rem down to 0rem
+    gsap.fromTo(
+      target,
+      { y: "25rem" }, // initial offset
+      {
+        y: "0rem",     // final position
+        ease: "none",
+        scrollTrigger: {
+          trigger: document.body,   // scroll the whole page
+          start: "bottom-=1100 bottom", // start 400px before bottom
+          end: "bottom-=400 bottom",        // finish at bottom
+          scrub: true,                 // scroll-sensitive
+        },
+      }
+    );
+
+    return () => {
+      ScrollTrigger.getAll().forEach((t) => t.kill());
+    };
+  }, []);
   return (
-    <footer className="w-full bg-[#0f0c11] fixed bottom-0 text-white pt-16 pb-6 ">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+    <footer className="w-full bg-[#0f0c11] md:fixed bottom-0 text-white pt-16 pb-6 ">
+      <div
+        ref={innerRef}
+        className="footer-inner max-w-7xl mx-auto px-6 lg:px-10 translate-y-96"
+      >
         {/* Brand + Intro */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-10 border-b border-white/10 pb-10">
           <div className="flex flex-col gap-3 max-w-sm">
